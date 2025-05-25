@@ -1,0 +1,242 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding-top: 70px; /* For fixed header */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    float: left;
+    font-size: 1.8rem;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+header nav ul li a:hover {
+    color: #00aaff;
+}
+
+/* Hero Section */
+#hero {
+    background: #007bff; /* A primary blue color */
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #ff8c00; /* A vibrant orange */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e07b00;
+}
+
+/* General Section Styling */
+section {
+    padding: 40px 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+section h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+/* About Page Sections */
+#about-main, #mission, #vision, #team {
+    background-color: #fff;
+    margin-bottom: 20px; /* Add some space between sections */
+    padding: 30px;
+    border-radius: 5px;
+}
+
+/* Services Page */
+#service-list .service-item {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Portfolio Page */
+#portfolio-gallery {
+    text-align: center; /* Center the items if they are inline-block */
+}
+#portfolio-gallery .portfolio-item {
+    display: inline-block; /* Or use flexbox/grid for better alignment */
+    width: calc(33.333% - 40px); /* Adjust width for 3 items per row, considering margins */
+    margin: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    vertical-align: top; /* Align items to the top */
+}
+
+#portfolio-gallery .portfolio-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+/* Contact Page */
+#contact-form-details .container {
+    display: flex; /* Use flexbox to arrange form and details side-by-side */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px; /* Space between form and details */
+}
+
+#contact-form-details .contact-form {
+    flex: 2; /* Form takes more space */
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#contact-form-details .contact-details {
+    flex: 1; /* Details take less space */
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#contact-form-details form div {
+    margin-bottom: 15px;
+}
+
+#contact-form-details form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contact-form-details form input[type="text"],
+#contact-form-details form input[type="email"],
+#contact-form-details form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px; /* Add some space before the footer */
+}
+
+/* Responsive adjustments (very basic) */
+@media (max-width: 768px) {
+    header h1 {
+        float: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    body {
+        padding-top: 0; /* Remove padding when header is not fixed or changes layout */
+    }
+    
+    header {
+        position: static; /* Or 'relative' if preferred for mobile */
+    }
+
+    #portfolio-gallery .portfolio-item {
+        width: calc(50% - 40px); /* 2 items per row on tablets */
+    }
+    
+    #contact-form-details .container {
+        flex-direction: column; /* Stack form and details on smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    #portfolio-gallery .portfolio-item {
+        width: calc(100% - 40px); /* 1 item per row on small mobile */
+    }
+}
